@@ -1,0 +1,66 @@
+
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>Cadastrar PEP</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form [formGroup]="formPEP">
+    <ion-item id="page-select1">
+     <ion-label >
+       Data de entrega do PEP
+     </ion-label>
+     <ion-datetime formControlName="dataEntregaPEP" display-format="MMM DD, YYYY HH:mm">
+        </ion-datetime>
+   </ion-item>
+   <ion-item *ngIf="!formPEP.controls.dataEntregaPEP.valid && (formPEP.controls.dataEntregaPEP.dirty || formPEP.controls.dataEntregaPEP.touched)" color="danger">
+     <div [hidden]="!formPEP.controls.dataEntregaPEP.errors.required">
+       O campo é obrigatório
+     </div>
+  </ion-item>
+ 
+     <ion-item id="page-select2">
+       <ion-label >
+         Resultado de exame após 30 dias
+       </ion-label>
+       <ion-select type="text" formControlName="resultadoTrinta">
+         <ion-option >
+           Negativo
+         </ion-option>
+         <ion-option>
+           Positivo
+         </ion-option>
+       </ion-select>
+     </ion-item>
+     <ion-item *ngIf="!formPEP.controls.resultadoTrinta.valid && (formPEP.controls.resultadoTrinta.dirty || formPEP.controls.resultadoTrinta.touched)" color="danger">
+       <div [hidden]="!formPEP.controls.resultadoTrinta.errors.required">
+         O campo é obrigatório
+       </div>
+    </ion-item>
+ 
+     <ion-item id="page-select3">
+       <ion-label >
+        Resultado de exame após 90 dias
+       </ion-label>
+       <ion-select type="text" formControlName="resultadoNoventa">
+         <ion-option>
+           Negativo
+         </ion-option>
+         <ion-option>
+           Positivo
+         </ion-option>
+       </ion-select>
+     </ion-item>
+
+     <div padding>
+       <button ion-button block type="submit" [disabled]="!formPEP.valid" (click)="enviaPEP()">Salvar</button>
+     </div>
+ 
+   </form>
+ 
+</ion-content>

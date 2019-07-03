@@ -1,0 +1,70 @@
+
+<ion-header>
+
+  <ion-navbar color="secondary">
+      <ion-title>
+          PEP
+        </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+   
+  <ion-card>
+      <ion-card-header style="background-color: #5b94f9" color="light">
+          Lista de PEP's
+        </ion-card-header>
+
+    <ion-list inset>
+    <ion-item-sliding *ngFor="let pep of pep | async" >
+        <ion-item>
+        <h1 class="label-wrap-detail" style="font-size: 1.7rem">Data de entrega do PEP<br/></h1>
+            <ion-row>
+              <ion-col>
+            <h1 class="col-demo" style="font-size: 1.7rem; color:blue;">{{ pep.dataEntregaPEP }}</h1>
+          </ion-col>
+        </ion-row>
+
+            <h1 class="label-wrap-detail" style="font-size: 1.7rem">Resultado de exame após 30 dias<br/></h1>
+            <ion-row>
+              <ion-col>
+            <h1 class="col-demo" style="font-size: 1.7rem; color:blue;">{{ pep.resultadoTrinta }}</h1>
+          </ion-col>
+        </ion-row>
+
+            <h1 class="label-wrap-detail" style="font-size: 1.7rem">Resultado de exame após 90 dias<br/></h1>
+            <ion-row>
+              <ion-col>
+            <h1 class="col-demo" style="font-size: 1.7rem; color:blue;">{{ pep.resultadoNoventa}}</h1>
+          </ion-col>
+        </ion-row>
+
+        </ion-item>
+
+        <ion-item-options side="left">
+
+          <button ion-button color="secondary" (click)="editPEP(pep)">
+            <ion-icon name="create"></ion-icon>
+            Editar
+          </button>
+
+          <button ion-button color="danger" (click)="removePEP(pep.key)">
+            <ion-icon name="trash"></ion-icon>
+            Remover
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-card>
+
+
+<!--<ion-fab bottom right>
+  <button ion-fab color="secondary" (click)="newPEP(paciente)">
+    <ion-icon name="add"></ion-icon>
+  </button>
+</ion-fab>-->
+
+</ion-content>

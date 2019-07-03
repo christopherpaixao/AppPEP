@@ -1,0 +1,60 @@
+<ion-content padding class="loginPage" scroll="false">
+
+    <!--<form #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off" class="login-form">-->
+      <ion-grid style="height: 100%">
+        <ion-row justify-content-center align-items-center style="height: 100%">
+        <ion-grid class="login-container">
+          <form #form="ngForm" novalidate  autocomplete="off" class="login-form">
+        <ion-row align-items-center>
+        <ion-col><img src="/assets/imgs/logo.png"></ion-col> 
+        </ion-row>
+
+        <ion-row>
+        <ion-col>
+        <ion-list inset>
+  
+
+        <ion-item >
+          <ion-label stacked>E-mail</ion-label>
+          <ion-input type="text" name="email" [(ngModel)]="user.email" #email="ngModel" required></ion-input>
+        </ion-item>
+        <ion-item *ngIf="email.errors && (email.dirty || email.touched)" class="text-danger">
+          O campo é obrigatório
+        </ion-item>
+  
+        <ion-item>
+          <ion-label stacked>Senha</ion-label>
+          <ion-input type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required></ion-input>
+        </ion-item>
+        <ion-item *ngIf="password.errors && (password.dirty || password.touched)" class="text-danger">
+          O campo é obrigatório
+        </ion-item>
+  
+      </ion-list>
+    </ion-col>
+  </ion-row>
+
+  
+  <ion-row>
+    <ion-col>
+      <button ion-button block color="primary" [disabled]="!form.form.valid" (click)="signIn()">
+        Entrar
+      </button>
+    </ion-col>
+  </ion-row>
+        </form>
+  
+    <!--<button ion-button block clear (click)="createAccount()">
+      Criar Conta
+    </button>
+  
+    <button ion-button block color="primary" (click)="resetPassword()">
+      Esqueci minha senha
+    </button>-->
+    <button ion-button block color="primary" (click)="homeBtn()">Início</button>
+    <!--<button ion-button (click)="abrirAdministrador()" color="light">Admin</button>-->
+
+  </ion-grid>
+  </ion-row>
+  </ion-grid>
+  </ion-content>

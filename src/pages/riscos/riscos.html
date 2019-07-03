@@ -1,0 +1,73 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+      <ion-title>
+          Riscos
+        </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card>
+
+      <ion-card-header style="background-color: #5b94f9" color="light">
+        Riscos do Paciente
+      </ion-card-header>
+
+  <ion-list inset>
+      <ion-item-sliding *ngFor="let risco of riscos | async" >
+        <ion-item>
+        <h1 class="label-wrap-detail" style="font-size: 1.7rem">O tipo de material biológico é de risco para transmissao do HIV?<br/></h1>
+            <ion-row>
+              <ion-col>
+            <h1 class="col-demo" style="font-size: 1.7rem; color:blue;">{{ risco.matBiologico }}</h1>
+          </ion-col>
+        </ion-row>
+
+            <h1 class="label-wrap-detail" style="font-size: 1.7rem">O tipo de exposição é de risco para transmissao do HIV?<br/></h1>
+            <ion-row>
+              <ion-col>
+            <h1 class="col-demo" style="font-size: 1.7rem; color:blue;">{{ risco.tempoExposicao}}</h1>
+          </ion-col>
+        </ion-row>
+
+            <h1 class="label-wrap-detail" style="font-size: 1.7rem">O tempo transcorrido entre a exposição e o atendimento é menor que 72h?<br/></h1>
+            <ion-row>
+              <ion-col>
+            <h1 class="col-demo" style="font-size: 1.7rem; color:blue;">{{ risco.tempoExposicao}}</h1>
+          </ion-col>
+        </ion-row>
+
+            <h1 class="label-wrap-detail" style="font-size: 1.7rem">A pessoa exposta é não reagente para o HIV no momento do atendimento?<br/></h1>
+            <ion-row>
+            <ion-col>
+            <h1 class="col-demo" style="font-size: 1.7rem; color:blue;">{{ risco.pessoaExposta }}</h1>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+
+        <ion-item-options side="left">
+
+          <button ion-button color="secondary" (click)="editRisco(risco)">
+            <ion-icon name="create"></ion-icon>
+            Editar
+          </button>
+
+          <button ion-button color="danger" (click)="removeRisco(risco.key)">
+            <ion-icon name="trash"></ion-icon>
+            Remover
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+</ion-card>
+
+<ion-fab bottom right>
+  <button ion-fab color="secondary" (click)="newRisco(paciente)">
+    <ion-icon name="add"></ion-icon>
+  </button>
+</ion-fab>
+</ion-content>

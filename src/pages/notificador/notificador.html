@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>
+      Notificador
+    </ion-title>
+    <ion-fab bottom right>
+        <button ion-button icon-only icon-end color="secondary" (click)="logOutNotificador($event)">
+            <ion-icon name="log-out" color="light"></ion-icon>
+          </button>
+        </ion-fab>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card>
+
+      <ion-card-header style="background-color: #5b94f9" color="light">
+        Lista de Pacientes
+      </ion-card-header>
+
+  <ion-list inset>
+      <ion-item-sliding *ngFor="let paciente of pacientes | async" >
+        
+        <ion-item>
+          <ion-icon name="arrow-dropright" item-start></ion-icon>
+          <!--<h1 style="font-size: 1.7rem" >{{ paciente.name }}</h1>-->
+          <ion-row>
+          <ion-col>
+            <div class="col-demo">{{ paciente.name }}</div>
+          </ion-col>
+        </ion-row>
+        </ion-item>
+
+        <ion-item-options side="left">
+
+          <button ion-button color="secondary" (click)="editPaciente(paciente)">
+            <ion-icon name="create"></ion-icon>
+            Editar
+          </button>
+
+          <button ion-button color="danger" (click)="removePaciente(paciente.key)">
+            <ion-icon name="trash"></ion-icon>
+            Remover
+          </button>
+
+          <button ion-button color="primary" (click)="abrirRiscos(paciente)">
+              <ion-icon name="list-box"></ion-icon>
+              Riscos
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+</ion-card>
+   
+    <ion-fab bottom right>
+      <button ion-fab color="secondary" (click)="newPaciente()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-fab>
+    <!--<ion-fab bottom left>
+      <button ion-fab icon-only color="royal" (click)="logOutNotificador($event)">
+        <ion-icon name="log-out"></ion-icon>
+     </button>
+    </ion-fab>-->
+
+</ion-content>
+

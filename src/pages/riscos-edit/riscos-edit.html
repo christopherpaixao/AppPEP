@@ -1,0 +1,99 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>{{ title }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form [formGroup]="formRiscos">
+   <ion-item id="page-select1">
+    <ion-label >
+      O tipo de material biológico é de risco para transmissao do HIV?
+    </ion-label>
+    <ion-select type="text" formControlName="matBiologico">
+      <ion-option value="Sim">
+        Sim
+      </ion-option>
+      <ion-option value="Não">
+        Não
+      </ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item *ngIf="!formRiscos.controls.matBiologico.valid && (formRiscos.controls.matBiologico.dirty || formRiscos.controls.matBiologico.touched)" color="danger">
+    <div [hidden]="!formRiscos.controls.matBiologico.errors.required">
+      O campo é obrigatório
+    </div>
+ </ion-item>
+
+    <ion-item id="page-select2">
+      <ion-label >
+        O tipo de exposição é de risco para transmissao do HIV?
+      </ion-label>
+      <ion-select type="text" formControlName="tipoExposicao">
+        <ion-option value="Sim">
+          Sim
+        </ion-option>
+        <ion-option value="Não">
+          Não
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="!formRiscos.controls.tipoExposicao.valid && (formRiscos.controls.tipoExposicao.dirty || formRiscos.controls.tipoExposicao.touched)" color="danger">
+      <div [hidden]="!formRiscos.controls.tipoExposicao.errors.required">
+        O campo é obrigatório
+      </div>
+   </ion-item>
+
+    <ion-item id="page-select3">
+      <ion-label >
+        O tempo transcorrido entre a exposição e o atendimento é menor que 72h?
+      </ion-label>
+      <ion-select type="text" formControlName="tempoExposicao">
+        <ion-option value="Sim">
+          Sim
+        </ion-option>
+        <ion-option value="Não">
+          Não
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="!formRiscos.controls.tempoExposicao.valid && (formRiscos.controls.tempoExposicao.dirty || formRiscos.controls.tempoExposicao.touched)" color="danger">
+      <div [hidden]="!formRiscos.controls.tempoExposicao.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <ion-item id="page-select4">
+      <ion-label>
+        A pessoa exposta tem o teste rápido NÃO REAGENTE para o HIV no momento do atendimento?
+      </ion-label>
+      <ion-select type="text" formControlName="pessoaExposta">
+        <ion-option value="Sim">
+          Sim
+        </ion-option>
+        <ion-option value="Não">
+          Não
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="!formRiscos.controls.pessoaExposta.valid && (formRiscos.controls.pessoaExposta.dirty || formRiscos.controls.pessoaExposta.touched)" color="danger">
+      <div [hidden]="!formRiscos.controls.pessoaExposta.errors.required">
+        O campo é obrigatório
+      </div>
+    </ion-item>
+
+    <div padding>
+      <button ion-button block type="submit" [disabled]="!formRiscos.valid" (click)="enviaRisco()">Salvar</button>
+    </div>
+
+  </form>
+
+</ion-content>
+
+
+
+

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "394450752545",
+    "firebase_url": "https://app-pep.firebaseio.com",
+    "project_id": "app-pep",
+    "storage_bucket": "app-pep.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394450752545:android:cc2f97af68a4c2c8",
+        "android_client_info": {
+          "package_name": "com.devplus.pepapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394450752545-1eq8qmeqgdcrnk7pi2bt0rvuoj232h4m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChXJiP6SfsoT0jrQ6dE8cLNhCatCnMPu0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

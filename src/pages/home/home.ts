@@ -9,9 +9,6 @@ import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { LoginNotificadorPage } from '../login-notificador/login-notificador';
 import { LoginCtaPage } from '../login-cta/login-cta';
 import { LoginAdminPage } from '../login-admin/login-admin';
-import { SMS } from '@ionic-native/sms/ngx';
-import { Zenvia } from '@zenvia/zenvia-sms-core';
-
 
 @Component({
   selector: 'page-home',
@@ -25,10 +22,8 @@ export class HomePage {
 
   constructor(public navCtrl: NavController,
     private toastCtrl: ToastController,
-    private authService: AuthServiceProvider,
-    private zenvia: Zenvia,
-    private sms: SMS) {
-      this.message="Teste SMS";
+    private authService: AuthServiceProvider,) {
+
   }
   createAccount() {
     this.navCtrl.push(SignupPage);

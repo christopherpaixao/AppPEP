@@ -53,6 +53,7 @@ createForm() {
     name: [this.paciente.name, Validators.required],
     dn: [this.paciente.dn, Validators.required],
     fone: [this.paciente.fone, Validators.required],
+    email: [this.paciente.email],
     nomemae: [this.paciente.nomemae, Validators.required],
     cidade: [this.paciente.cidade, Validators.required],
     dataacidente: [this.paciente.dataacidente, Validators.required],

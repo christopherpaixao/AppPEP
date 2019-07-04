@@ -52,6 +52,16 @@
       </ion-item>
 
       <ion-item>
+        <ion-label stacked>E-mail</ion-label>
+        <ion-input type="text"  formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.email.valid && (form.controls.email.dirty || form.controls.email.touched)" color="danger">
+        <div [hidden]="!form.controls.email.errors.required">
+          O campo é obrigatório
+        </div>
+      </ion-item>
+
+      <ion-item>
         <ion-label stacked>Cidade</ion-label>
         <ion-input type="text" formControlName="cidade"></ion-input>
       </ion-item>

@@ -90,7 +90,5 @@
     <platform name="android">
         <resource-file src="google-services.json" target="app/google-services.json" />
     </platform>
-    <plugin name="cordova-plugin-firebase" spec="2.0.5" />
     <plugin name="cordova-sms-plugin" spec="1.0.0" />
-    <engine name="android" spec="7.1.4" />
 </widget>

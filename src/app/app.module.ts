@@ -29,6 +29,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AdministradorPage } from '../pages/administrador/administrador';
 import { LoginAdminPage } from '../pages/login-admin/login-admin';
 import { SMS } from '@ionic-native/sms/ngx';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 
 @NgModule({
@@ -78,6 +79,7 @@ import { SMS } from '@ionic-native/sms/ngx';
     AuthServiceProvider,
     Firebase,
     SMS,
+    EmailComposer,
     FcmProvider
   ]
 })

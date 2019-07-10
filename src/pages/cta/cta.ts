@@ -27,6 +27,9 @@ export class CtaPage {
   newPEP() {
     this.navCtrl.push('CtaDadosPage');
   }
+  newPaciente() {
+    this.navCtrl.push('PacienteEditPage');
+  }
 
   editPEP(paciente: any) {
     // Maneira 1

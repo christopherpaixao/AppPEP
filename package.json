@@ -21,6 +21,7 @@
     "@angular/platform-browser": "5.2.11",
     "@angular/platform-browser-dynamic": "5.2.11",
     "@ionic-native/core": "~4.17.0",
+    "@ionic-native/email-composer": "^4.20.0",
     "@ionic-native/firebase": "^4.19.0",
     "@ionic-native/sms": "^5.3.0",
     "@ionic-native/splash-screen": "~4.17.0",
@@ -33,9 +34,9 @@
     "angularfire2": "^5.0.0-rc.3",
     "brmasker-ionic-3": "^1.6.3",
     "brmasker4": "^1.0.3",
-    "cordova-android": "7.1.4",
+    "cordova-android": "8.0.0",
     "cordova-plugin-device": "^2.0.2",
-    "cordova-plugin-firebase": "2.0.5",
+    "cordova-plugin-email-composer": "0.9.2",
     "cordova-plugin-ionic-keyboard": "^2.1.3",
     "cordova-plugin-ionic-webview": "^3.1.2",
     "cordova-plugin-sms-receive": "^1.0.2",
@@ -75,8 +76,10 @@
         "ANDROID_SUPPORT_V13_VERSION": "27.+",
         "FCM_VERSION": "11.6.2"
       },
-      "cordova-plugin-firebase": {},
-      "cordova-sms-plugin": {}
+      "cordova-sms-plugin": {},
+      "cordova-plugin-email-composer": {
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      }
     },
     "platforms": [
       "android"

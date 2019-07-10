@@ -9,6 +9,7 @@ import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { LoginNotificadorPage } from '../login-notificador/login-notificador';
 import { LoginCtaPage } from '../login-cta/login-cta';
 import { LoginAdminPage } from '../login-admin/login-admin';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 @Component({
   selector: 'page-home',
@@ -22,7 +23,8 @@ export class HomePage {
 
   constructor(public navCtrl: NavController,
     private toastCtrl: ToastController,
-    private authService: AuthServiceProvider,) {
+    private authService: AuthServiceProvider,
+    public emailComposer: EmailComposer) {
 
   }
   createAccount() {
@@ -65,6 +67,12 @@ export class HomePage {
   }
   abrirAdmin(){
     this.navCtrl.push(LoginAdminPage, {}, {animate: true});
+  }
+
+  abrirEmailComposer(){
+    this.emailComposer.open({
+      to:'cpaixaoneto@gmail.com'
+    })
   }
  
 
